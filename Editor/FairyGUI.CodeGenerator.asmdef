@@ -1,0 +1,20 @@
+{
+    "name": "FairyGUI.CodeGenerator",
+    "rootNamespace": "FairyGUI.CodeGenerator",
+    "references": [
+        "GUID:af39456e6a3b4994f8bcbb4298527011",
+        "GUID:f41e3a062de97a0459e3e99088ba5166",
+        "GUID:757f6ead127d5b34aa7080d8076f7570"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

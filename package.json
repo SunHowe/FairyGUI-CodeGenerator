@@ -1,0 +1,15 @@
+{
+    "name": "com.howegame.fariygui.generator",
+    "version": "1.0.0",
+    "displayName": "FairyGUI-CodeGenerator",
+    "description": "Unity package for FairyGUI-CodeGenerator. It provides a geneator of FairyGUI csharp code.",
+    "category": "Runtime",
+    "keywords": [
+      "FairyGUI"
+    ],
+    "author": {
+      "name": "SunHowe",
+      "email": "tosunhowe@gmail.com",
+      "url": "https://github.com/SunHowe/FairyGUI-CodeGenerator.git"
+    }
+  }
