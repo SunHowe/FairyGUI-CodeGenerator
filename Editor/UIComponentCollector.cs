@@ -94,6 +94,7 @@ namespace FairyGUI.CodeGenerator
 
                 nodes.Add(new UIComponentNode
                 {
+                    Index = i,
                     Name = name,
                     ObjectType = objectType,
                     Ref = !string.IsNullOrEmpty(src) ? FormatURL(pkgId, src) : string.Empty,
@@ -140,6 +141,7 @@ namespace FairyGUI.CodeGenerator
 
                 controllers.Add(new UIController
                 {
+                    Index = i,
                     Name = name,
                     Pages = pages,
                 });
@@ -165,7 +167,11 @@ namespace FairyGUI.CodeGenerator
 
                 buffer.position = nextPos;
 
-                transitions.Add(new UITransition { Name = name });
+                transitions.Add(new UITransition
+                {
+                    Index = i,
+                    Name = name
+                });
             }
 
             return transitions;
