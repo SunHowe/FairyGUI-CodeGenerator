@@ -13,6 +13,7 @@ namespace FairyGUI.CodeGenerator.Scriban
     public sealed class ScribanCodeGenerator : IUICodeGenerator
     {
         public GetExportSettings GetExportSettings { get; }
+        public Func<string, bool> AcceptNameFilter { get; set; } = IgnoreDefaultName;
 
         public ScribanCodeGenerator(GetExportSettings getExportSettings)
         {
@@ -49,8 +50,8 @@ namespace FairyGUI.CodeGenerator.Scriban
                 
                 return stringBuilder.ToString();
             }));
-            
-            scriptObject.Import("is_accept_name", new Func<string, bool>(str => !Regex.IsMatch(str, "[ntc]\\d+")));
+
+            scriptObject.Import("is_accept_name", AcceptNameFilter);
             
             var context = new TemplateContext();
             context.PushGlobal(scriptObject);
@@ -62,6 +63,11 @@ namespace FairyGUI.CodeGenerator.Scriban
                 Directory.CreateDirectory(directory);
 
             File.WriteAllText(outputPath, output, Encoding.UTF8);
+        }
+
+        private static bool IgnoreDefaultName(string str)
+        {
+            return !Regex.IsMatch(str, "^[ntc]\\d+$");
         }
     }
 }
